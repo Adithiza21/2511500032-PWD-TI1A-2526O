@@ -9,4 +9,5 @@ Hari ini, Rabu 8 oktober 2025, saya belajar:
 <li>membuat struktur from untuk section contak</li>
 <li> stylinmembuatg untuk selector ID #about</li>
 <li> stylinmembuatg untuk selector ID #about elemen h2</li>
+<li> stylinmembuatg untuk selector ID #about elemen p</li>
 </ol>
