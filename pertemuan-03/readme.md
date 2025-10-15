@@ -17,6 +17,7 @@ lC<li> stylinmembuatg untuk selector ID #about elemen strong</li>
 <li>Upgrade struktur form section #contact</il>
 <li> styling untuk selector id#contact label</li>
 <li> styling untuk selector id#contact label>span</li>
+<li> styling untuk selector id#contact input dan textarea</li>
 
 
 </ol>
