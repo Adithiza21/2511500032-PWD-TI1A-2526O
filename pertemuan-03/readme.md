@@ -18,6 +18,5 @@ lC<li> stylinmembuatg untuk selector ID #about elemen strong</li>
 <li> styling untuk selector id#contact label</li>
 <li> styling untuk selector id#contact label>span</li>
 <li> styling untuk selector id#contact input dan textarea</li>
-
-
+<li> styling untuk selector id#contact button</li>
 </ol>
