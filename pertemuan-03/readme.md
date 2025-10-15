@@ -10,7 +10,7 @@ Hari ini, Rabu 8 oktober 2025, saya belajar:
 <li> stylinmembuatg untuk selector ID #about</li>
 <li> stylinmembuatg untuk selector ID #about elemen h2</li>
 <li> stylinmembuatg untuk selector ID #about elemen p</li>
-lC<li> stylinmembuatg untuk selector ID #about elemen strong</li>
+<li> stylinmembuatg untuk selector ID #about elemen strong</li>
 <li> stylinmembuatg untuk selector ID #about mode responsif (mobile)</li>
 <li> styling untuk selector id#contact</li>
 <li> styling untuk selector id#contact h2</li>
