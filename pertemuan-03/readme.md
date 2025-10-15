@@ -14,11 +14,12 @@ Hari ini, Rabu 8 oktober 2025, saya belajar:
 <li> stylinmembuatg untuk selector ID #about mode responsif (mobile)</li>
 <li> styling untuk selector id#contact</li>
 <li> styling untuk selector id#contact h2</li>
-<li>Upgrade struktur form section #contact</il>
+<li> Upgrade struktur form section #contact</il>
 <li> styling untuk selector id#contact label</li>
 <li> styling untuk selector id#contact label>span</li>
 <li> styling untuk selector id#contact input dan textarea</li>
 <li> styling untuk selector id#contact button</li>
 <li> styling untuk selector id#contact warna button</li>
 <li> styling untuk selector id#contact efek button</li>
+<li> stylinmembuatg untuk selector ID #contact mode responsif (mobile)</li>
 </ol>
