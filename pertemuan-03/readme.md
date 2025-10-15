@@ -14,5 +14,5 @@ lC<li> stylinmembuatg untuk selector ID #about elemen strong</li>
 <li> stylinmembuatg untuk selector ID #about mode responsif (mobile)</li>
 <li> styling untuk selector id#contact</li>
 <li> styling untuk selector id#contact h2</li>
-
+<li>Upgrade struktur form section #contact</il>
 </ol>
