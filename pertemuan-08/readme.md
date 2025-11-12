@@ -6,5 +6,5 @@ Kelompok: TI1A<br>
 <br>
 Proses saya mengerjakan UTS ini sebagai berikut:<br>
 <ol>
-  <li>silahkan diisi sesuai proses pengerjaan kalian masing-masing</li>
+  <li>Membuat section baru yaitu untuk pendaftaran frofil </li>
 </ol>
