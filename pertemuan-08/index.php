@@ -1,62 +1,58 @@
-
 <?php
 session_start();
 
-$sesnama = "";
-if (isset($_SESSION["sesnama"])):
-  $sesnama = $_SESSION["sesnama"];
-endif;
+$nim        = $_SESSION["nim"]        ?? "";
+$nama       = $_SESSION["nama"]       ?? "";
+$tempat     = $_SESSION["tempat"]     ?? "";
+$tgl_lahir  = $_SESSION["tgl_lahir"]  ?? "";
+$hobi       = $_SESSION["hobi"]       ?? "";
+$pasangan   = $_SESSION["pasangan"]   ?? "";
+$pekerjaan  = $_SESSION["pekerjaan"]  ?? "";
+$ortu       = $_SESSION["ortu"]       ?? "";
+$kakak      = $_SESSION["kakak"]      ?? "";
+$adik       = $_SESSION["adik"]       ?? "";
 
-$sesemail = "";
-if (isset($_SESSION["sesemail"])):
-  $sesemail = $_SESSION["sesemail"];
-endif;
-
-$sespesan = "";
-if (isset($_SESSION["sespesan"])):
-  $sespesan = $_SESSION["sespesan"];
-endif;
+$sesnama  = $_SESSION["sesnama"]  ?? "";
+$sesemail = $_SESSION["sesemail"] ?? "";
+$sespesan = $_SESSION["sespesan"] ?? "";
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Judul Halaman</title>
+  <title>Pendaftaran Profil Pengunjung</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <header>
-    <h1>Ini Header</h1>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
-      &#9776;
-    </button>
+    <h1>Selamat Datang</h1>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">&#9776;</button>
     <nav>
       <ul>
         <li><a href="#home">Beranda</a></li>
+        <li><a href="#form">Pengunjung</a></li>
         <li><a href="#about">Tentang</a></li>
-        <li><a href="#from">pengujung</a></li>
         <li><a href="#contact">Kontak</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
+    
     <section id="home">
       <h2>Selamat Datang</h2>
-      <?php
-      echo "halo dunia!<br>";
-      echo "nama saya hadi";
-      ?>
-      <p>Ini contoh paragraf HTML.</p>
+      <p>Halo dunia!<br>Nama saya Monika</p>
+      <p>Ini adalah halaman profil pengunjung berbasis PHP.</p>
     </section>
+
     
-    <section id="form"> 
-        <h2>Pendaftaran profil Pengunjung </h2>
-        <form action="proses.php" method="POST">
+    <section id="form">
+      <h2>Pendaftaran Profil Pengunjung</h2>
+
+      <form action="proses.php" method="POST">
         <label><span>NIM:</span>
           <input type="text" name="nim" placeholder="Masukkan NIM" value="<?= $nim ?>" required>
         </label>
@@ -103,76 +99,62 @@ endif;
         </div>
       </form>
     </section>
-          
+
+    
     <section id="about">
-      <?php     
-      $ 1500010;
-      $NIM = '0344300002';
-      $nama = "Say'yid Abdullah";
-      $Nama = 'Al\'kautar Benyamin';
-      $tempat = "Jebus";
-      ?>
       <h2>Tentang Saya</h2>
-      <p><strong>NIM:</strong>
-        <?php
-        echo $NIM;
-        ?>
-      </p>
-      <p><strong>Nama Lengkap:</strong>
-        <?php
-        echo $Nama;
-        ?> &#128526;
-      </p>
-      <p><strong>Tempat Lahir:</strong> <?php echo $tempat; ?></p>
-      <p><strong>Tanggal Lahir:</strong> 1 Januari 2000</p>
-      <p><strong>Hobi:</strong> Memasak, coding, dan bermain musik &#127926;</p>
-      <p><strong>Pasangan:</strong> Belum ada &hearts;</p>
-      <p><strong>Pekerjaan:</strong> Dosen di ISB Atma Luhur &copy; 2025</p>
-      <p><strong>Nama Orang Tua:</strong> Bapak Setiawan dan Ibu Maria</p>
-      <p><strong>Nama Kakak:</strong> Antonius Setiawan</p>
-      <p><strong>Nama Adik:</strong> <?php echo $sespesan ?></p>
+      <?php if (!empty($nim)): ?>
+        <p><strong>NIM:</strong> <?= $nim ?></p>
+        <p><strong>Nama Lengkap:</strong> <?= $nama ?> </p>
+        <p><strong>Tempat Lahir:</strong> <?= $tempat ?></p>
+        <p><strong>Tanggal Lahir:</strong> <?= $tgl_lahir ?></p>
+        <p><strong>Hobi:</strong> <?= $hobi ?></p>
+        <p><strong>Pasangan:</strong> <?= $pasangan ?></p>
+        <p><strong>Pekerjaan:</strong> <?= $pekerjaan ?></p>
+        <p><strong>Nama Orang Tua:</strong> <?= $ortu ?></p>
+        <p><strong>Nama Kakak:</strong> <?= $kakak ?></p>
+        <p><strong>Nama Adik:</strong> <?= $adik ?></p>
+      <?php else: ?>
+        <p>Belum ada data pengunjung. Silakan isi form di atas </p>
+      <?php endif; ?>
     </section>
 
+    
     <section id="contact">
       <h2>Kontak Kami</h2>
       <form action="proses.php" method="POST">
-
-        <label for="txtNama"><span>Nama:</span>
-          <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama" required autocomplete="name">
+        <label><span>Nama:</span>
+          <input type="text" name="txtNama" placeholder="Masukkan nama" required>
         </label>
 
-        <label for="txtEmail"><span>Email:</span>
-          <input type="email" id="txtEmail" name="txtEmail" placeholder="Masukkan email" required autocomplete="email">
+        <label><span>Email:</span>
+          <input type="email" name="txtEmail" placeholder="Masukkan email" required>
         </label>
 
-        <label for="txtPesan"><span>Pesan Anda:</span>
-          <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="Tulis pesan anda..." required></textarea>
-          <small id="charCount">0/200 karakter</small>
+        <label><span>Pesan Anda:</span>
+          <textarea name="txtPesan" rows="4" placeholder="Tulis pesan anda..." required></textarea>
         </label>
 
-
-        <button type="submit">Kirim</button>
-        <button type="reset">Batal</button>
+        <div class="button-container">
+          <button type="submit">Kirim</button>
+          <button type="reset">Batal</button>
+        </div>
       </form>
 
       <?php if (!empty($sesnama)): ?>
-        <br><hr>
-        <h2>Yang menghubungi kami</h2>
-        <p><strong>Nama :</strong> <?php echo $sesnama ?></p>
-        <p><strong>Email :</strong> <?php echo $sesemail ?></p>
-        <p><strong>Pesan :</strong> <?php echo $sespesan ?></p>
+        <hr>
+        <h3>Yang Menghubungi Kami:</h3>
+        <p><strong>Nama:</strong> <?= $sesnama ?></p>
+        <p><strong>Email:</strong> <?= $sesemail ?></p>
+        <p><strong>Pesan:</strong> <?= $sespesan ?></p>
       <?php endif; ?>
-
-
-
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Yohanes Setiawan Japriadi [0344300002]</p>
+    <p>&copy; 2025 MUHAMMAD MIFTAH ALQOIS [2511500010]</p>
   </footer>
 
   <script src="script.js"></script>
 </body>
-
 </html>
