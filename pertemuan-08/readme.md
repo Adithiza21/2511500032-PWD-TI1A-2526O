@@ -15,6 +15,7 @@ Proses saya mengerjakan UTS ini sebagai berikut:<br>
   <li> Membuat section baru buat pengunjung web </li>
   <li> Membuat isi di section form </li>
   <li>membuat style.css buat section baru </li>
+  <li> Membuat isi di proses.php </li>
 </ol>
 =======
   <li>silahkan diisi sesuai proses pengerjaan kalian masing-masing</li>
