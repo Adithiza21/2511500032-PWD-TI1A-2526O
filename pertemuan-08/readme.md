@@ -7,4 +7,6 @@ Kelompok: TI1A<br>
 Proses saya mengerjakan UTS ini sebagai berikut:<br>
 <ol>
   <li>Membuat section baru yaitu untuk pendaftaran frofil </li>
+  <li> Membuat section baru buat pengunjung web </li>
+  <li> Membuat isi di section form </li>
 </ol>

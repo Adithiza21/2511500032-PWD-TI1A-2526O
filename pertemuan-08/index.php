@@ -38,6 +38,7 @@ endif;
       <ul>
         <li><a href="#home">Beranda</a></li>
         <li><a href="#about">Tentang</a></li>
+        <li><a href="#from">pengujung</a></li>
         <li><a href="#contact">Kontak</a></li>
       </ul>
     </nav>
@@ -52,10 +53,60 @@ endif;
       ?>
       <p>Ini contoh paragraf HTML.</p>
     </section>
+    
+    <section id="form"> 
+        <h2>Pendaftaran profil Pengunjung </h2>
+        <form action="proses.php" method="POST">
+        <label><span>NIM:</span>
+          <input type="text" name="nim" placeholder="Masukkan NIM" value="<?= $nim ?>" required>
+        </label>
 
+        <label><span>Nama Lengkap:</span>
+          <input type="text" name="nama" placeholder="Masukkan nama lengkap" value="<?= $nama ?>" required>
+        </label>
+
+        <label><span>Tempat Lahir:</span>
+          <input type="text" name="tempat" placeholder="Masukkan tempat lahir" value="<?= $tempat ?>" required>
+        </label>
+
+        <label><span>Tanggal Lahir:</span>
+          <input type="text" name="tgl_lahir" placeholder="Masukkan tanggal lahir" value="<?= $tgl_lahir ?>" required>
+        </label>
+
+        <label><span>Hobi:</span>
+          <input type="text" name="hobi" placeholder="Masukkan hobi" value="<?= $hobi ?>">
+        </label>
+
+        <label><span>Pasangan:</span>
+          <input type="text" name="pasangan" placeholder="Masukkan nama pasangan" value="<?= $pasangan ?>">
+        </label>
+
+        <label><span>Pekerjaan:</span>
+          <input type="text" name="pekerjaan" placeholder="Masukkan pekerjaan" value="<?= $pekerjaan ?>">
+        </label>
+
+        <label><span>Nama Orang Tua:</span>
+          <input type="text" name="ortu" placeholder="Masukkan nama orang tua" value="<?= $ortu ?>">
+        </label>
+
+        <label><span>Nama Kakak:</span>
+          <input type="text" name="kakak" placeholder="Masukkan nama kakak" value="<?= $kakak ?>">
+        </label>
+
+        <label><span>Nama Adik:</span>
+          <input type="text" name="adik" placeholder="Masukkan nama adik" value="<?= $adik ?>">
+        </label>
+
+        <div class="button-container">
+          <button type="submit">Kirim</button>
+          <button type="reset">Batal</button>
+        </div>
+      </form>
+    </section>
+          
     <section id="about">
-      <?php
-      $nim = 2511500010;
+      <?php     
+      $ 1500010;
       $NIM = '0344300002';
       $nama = "Say'yid Abdullah";
       $Nama = 'Al\'kautar Benyamin';
