@@ -152,7 +152,7 @@ $sespesan = $_SESSION["sespesan"] ?? "";
   </main>
 
   <footer>
-    <p>&copy; 2025 MUHAMMAD MIFTAH ALQOIS [2511500010]</p>
+    <p>&copy; 2025 MUHAMMAD ADITHIZA 2511500032</p>
   </footer>
 
   <script src="script.js"></script>
