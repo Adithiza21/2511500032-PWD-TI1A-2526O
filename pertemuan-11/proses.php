@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 require_once _DIR_ . '/koneksi.php';
 
 require_once _DIR_ . '/fungsi.php';
@@ -8,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     $_SESSION['flash_error'] = 'Akses tidak valid.';
     redirect_ke('index.php#contact');
 }
+
 if (!$conn) {
 
     $_SESSION['flash_error'] = 'Koneksi database gagal.';
@@ -15,6 +17,20 @@ if (!$conn) {
     redirect_ke('index.php#contact');
 
 }
+
+$nama  = bersihkan($_POST['txtNama']  ?? '');
+$email = bersihkan($_POST['txtEmail'] ?? '');
+$pesan = bersihkan($_POST['txtPesan'] ?? '');
+
+$captcha = trim($_POST['captcha'] ?? '');
+
+if ($captcha !== '5') {
+    $_SESSION['flash_error'] = "Jawaban captcha salah!";
+    $_SESSION['old'] = $_POST;
+    header("Location: index.php#contact");
+    exit;
+}
+
 
 if ($nama === '') {
     $errors[] = 'Nama wajib diisi.';
@@ -44,9 +60,10 @@ if (!empty($errors)) {
         'pesan' => $pesan,
     ];
 
-$nama  = bersihkan($_POST['txtNama']  ?? '');
-$email = bersihkan($_POST['txtEmail'] ?? '');
-$pesan = bersihkan($_POST['txtPesan'] ?? '');
+    $_SESSION['flash_error'] = implode('<br>', $errors);
+    redirect_ke('index.php#contact');
+    exit;
+}
 
 $sql = "INSERT INTO tbl_tamu (cnama, cemail, cpesan) VALUES (?, ?, ?)";
 $stmt = mysqli_prepare($conn, $sql);

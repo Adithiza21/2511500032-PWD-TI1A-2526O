@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once __DIR__ . '/fungsi.php';
+require_once _DIR_ . '/fungsi.php';
 ?>
 
 <!DOCTYPE html>
@@ -37,15 +37,6 @@ require_once __DIR__ . '/fungsi.php';
       ?>
       <p>Ini contoh paragraf HTML.</p>
     </section>
-
-<?php
-$flash_sukses = $_SESSION['flash_sukses'] ?? ''; # jika query sukses
-$flash_error  = $_SESSION['flash_error'] ?? '';  # jika ada error
-$old          = $_SESSION['old'] ?? [];           # untuk nilai lama form
-
-unset($_SESSION['flash_sukses'], $_SESSION['flash_error'], $_SESSION['old']); # bersihkan 3 session ini
-?>
-
 
     <section id="biodata">
       <h2>Biodata Sederhana Mahasiswa</h2>
@@ -118,6 +109,14 @@ unset($_SESSION['flash_sukses'], $_SESSION['flash_error'], $_SESSION['old']); # 
       <?= tampilkanBiodata($fieldConfig, $biodata) ?>
     </section>
 
+    <?php
+    $flash_sukses = $_SESSION['flash_sukses'] ?? ''; // jika query sukses
+    $flash_error  = $_SESSION['flash_error'] ?? '';  // jika ada error
+    $old          = $_SESSION['old'] ?? [];           // untuk nilai lama form
+
+    unset($_SESSION['flash_sukses'], $_SESSION['flash_error'], $_SESSION['old']); // bersihkan 3 session ini
+?>
+
     <section id="contact">
       <h2>Kontak Kami</h2>
       <?php if (!empty($flash_sukses)): ?>
@@ -131,9 +130,10 @@ unset($_SESSION['flash_sukses'], $_SESSION['flash_error'], $_SESSION['old']); # 
         <?= $flash_error; ?>
     </div>
 <?php endif; ?>
+
       <form action="proses.php" method="POST">
 
-<label for="txtNama"><span>Nama:</span>
+        <label for="txtNama"><span>Nama:</span>
           <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama"
             required autocomplete="name"
             value="<?= isset($old['nama']) ? htmlspecialchars($old['nama']) : '' ?>">
@@ -150,6 +150,12 @@ unset($_SESSION['flash_sukses'], $_SESSION['flash_error'], $_SESSION['old']); # 
             required><?= isset($old['pesan']) ? htmlspecialchars($old['pesan']) : '' ?></textarea>
           <small id="charCount">0/200 karakter</small>
         </label>
+
+        <label>
+          <span>Captcha: 2 + 3 = ?</span>
+          <input type="text" name="captcha" required>
+        </label>
+
 
         <button type="submit">Kirim</button>
         <button type="reset">Batal</button>
