@@ -12,4 +12,6 @@ SAYA MEMPELAJARI :
     <li>Update fungsi.php untuk helper redirect sederhana (pola PRG).</li>
     <li>Tambah penangkap pesan sukses/gagal (flash message dari SESSION) dan Tampilkan flash message </li>
     <li>Cek REQUEST_METHOD apakah menggunakan 'POST' </li>
+    <li>Ambil data $_POST, trim, htmlspecialchars.</li>
+    <li>Validasi (tidak boleh kosong, email valid).</li>
 </ol>
