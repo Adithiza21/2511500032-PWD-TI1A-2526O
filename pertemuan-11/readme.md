@@ -1,8 +1,8 @@
 # pertemuan-10
 silahkan sesuaikan dengan milik kalian masing-masing:<br><br>
 Hari ini, Selaasa 16.Des.2025, saya:<br>
-NIM: 2511500010<br>
-Nama: MUHAMMAD MIFTAH ALQOIS<br>
+NIM: 2511500032<br>
+Nama: MUHAMMAD ADITHIZA<br>
 Kelompok: TI1A<br>
 SAYA MEMPELAJARI :
 
@@ -17,4 +17,5 @@ SAYA MEMPELAJARI :
     <li>Tambah field baru di tabel tbl_tamu </li>
     <li>Tambahkan kolom nomor urut (bukan ID) pada read.php di kolom pertama Dan Tambahkan kolom Created At setelah kolom Pesan untuk menampilkan tanggal dan waktu pesan dikirim. </li>
     <li>Tambah input “captcha sederhana” (pertanyaan 2+3=?) untuk logika dasar. </li>
+    <li> Perbaikan karena kesalahan Penulisan </li>
 </ol>
