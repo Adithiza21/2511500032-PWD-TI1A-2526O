@@ -10,4 +10,5 @@ SAYA MEMPELAJARI :
     <li> mengcopy pertemuan-10 ke pertemuan-11 </li>
     <li> Menghapus Session Karena tidak terpakai</li>
     <li>Update fungsi.php untuk helper redirect sederhana (pola PRG).</li>
+    <li>Tambah penangkap pesan sukses/gagal (flash message dari SESSION) dan Tampilkan flash message </li>
 </ol>
