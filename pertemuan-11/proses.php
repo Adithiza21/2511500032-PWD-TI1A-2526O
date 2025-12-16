@@ -48,6 +48,47 @@ $nama  = bersihkan($_POST['txtNama']  ?? '');
 $email = bersihkan($_POST['txtEmail'] ?? '');
 $pesan = bersihkan($_POST['txtPesan'] ?? '');
 
+$sql = "INSERT INTO tbl_tamu (cnama, cemail, cpesan) VALUES (?, ?, ?)";
+$stmt = mysqli_prepare($conn, $sql);
+
+if (!$stmt) {
+    $_SESSION['flash_error'] = 'Terjadi kesalahan sistem (prepare gagal).';
+    mysqli_close($conn);   // <- WAJIB ditutup
+    redirect_ke('index.php#Contact');
+}
+
+mysqli_stmt_bind_param($stmt, 'sss', $nama, $email, $pesan);
+
+# Eksekusi query
+if (mysqli_stmt_execute($stmt)) {
+    unset($_SESSION['old']);
+    $_SESSION['flash_sukses'] = 'Terima kasih, data Anda sudah tersimpan.';
+    redirect_ke('index.php#Contact');
+} else {
+    $_SESSION['old'] = [
+        'nama'  => $nama,
+        'email' => $email,
+        'pesan' => $pesan,
+    ];
+
+    if (strlen($nama) < 3) {
+    $_SESSION['flash_error'] = "Nama minimal 3 karakter";
+    header("Location: index.php");
+    exit;
+}
+
+if (strlen($pesan) < 10) {
+    $_SESSION['flash_error'] = "Pesan minimal 10 karakter";
+    header("Location: index.php");
+    exit;
+}
+
+    $_SESSION['flash_error'] = 'Data gagal disimpan. Silakan coba lagi.';
+    redirect_ke('index.php#Contact');
+}
+#tutup statement 
+mysqli_stmt_close($stmt);
+
 $arrBiodata = [
   "nim" => $_POST["txtNim"] ?? "",
   "nama" => $_POST["txtNmLengkap"] ?? "",
