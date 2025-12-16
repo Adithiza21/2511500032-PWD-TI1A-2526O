@@ -11,4 +11,5 @@ SAYA MEMPELAJARI :
     <li> Menghapus Session Karena tidak terpakai</li>
     <li>Update fungsi.php untuk helper redirect sederhana (pola PRG).</li>
     <li>Tambah penangkap pesan sukses/gagal (flash message dari SESSION) dan Tampilkan flash message </li>
+    <li>Cek REQUEST_METHOD apakah menggunakan 'POST' </li>
 </ol>
