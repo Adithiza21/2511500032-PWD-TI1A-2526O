@@ -9,4 +9,5 @@ Mempelajari :
     <li> Membuat file baru yang bernama proses_data.php </li> 
     <li> Mengisi kode  di dalam proses_data.php </li>
     <li> membuat file baru dengan nama read_data.php </li>
+    <li> mengisi kode di read_data.php </li>
  </ol>
