@@ -14,4 +14,5 @@ Mempelajari :
     <li> Membuat isi agar berfungsi mengedit di edit_data.php </li>
     <li> Membuat file baru  yang bernama update_data.php </li>
     <li> Mengisi kode di dalam agar bekerja mengupdate </li>
+    <li> membuat file baru yaitu hapus_data.php </li>
  </ol>
