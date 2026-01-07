@@ -8,4 +8,5 @@ Mempelajari :
     <li> Membuat table baru yaitu tabel_atma </li>
     <li> Membuat file baru yang bernama proses_data.php </li> 
     <li> Mengisi kode  di dalam proses_data.php </li>
+    <li> membuat file baru dengan nama read_data.php </li>
  </ol>
