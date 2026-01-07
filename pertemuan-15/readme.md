@@ -6,4 +6,5 @@ Mempelajari :
  <ol> 
     <li> Mendownload zip pertemuan ke 15 dielearning </li>
     <li> Membuat table baru yaitu tabel_atma </li>
+    <li> Membuat file baru yang bernama proses_data.php </li>
  </ol>
