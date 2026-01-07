@@ -11,4 +11,5 @@ Mempelajari :
     <li> membuat file baru dengan nama read_data.php </li>
     <li> mengisi kode di read_data.php </li>
     <li> membuat file edit_data_php <li>
+    <li> Membuat isi agar berfungsi mengedit di edit_data.php </li>
  </ol>
