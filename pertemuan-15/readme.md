@@ -10,4 +10,5 @@ Mempelajari :
     <li> Mengisi kode  di dalam proses_data.php </li>
     <li> membuat file baru dengan nama read_data.php </li>
     <li> mengisi kode di read_data.php </li>
+    <li> membuat file edit_data_php <li>
  </ol>
