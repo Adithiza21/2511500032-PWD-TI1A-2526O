@@ -18,4 +18,5 @@ SAYA MEMPELAJARI :
     <li>Tambahkan kolom nomor urut (bukan ID) pada read.php di kolom pertama Dan Tambahkan kolom Created At setelah kolom Pesan untuk menampilkan tanggal dan waktu pesan dikirim. </li>
     <li>Tambah input “captcha sederhana” (pertanyaan 2+3=?) untuk logika dasar. </li>
     <li> Perbaikan karena kesalahan Penulisan </li>
+    <li>terakhir mengekspor sql kedalam file pertemuan ke 11 </li>
 </ol>
