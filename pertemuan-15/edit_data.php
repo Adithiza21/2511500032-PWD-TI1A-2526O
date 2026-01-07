@@ -17,7 +17,7 @@ if (!$cmid) {
 $stmt = mysqli_prepare($conn, "SELECT * FROM tbl_atma WHERE cmid = ? LIMIT 1");
 if (!$stmt) {
     $_SESSION['flash_error_mhs'] = 'Query tidak benar.';
-    redirect_ke('baca_mahasiswa.php');
+    redirect_ke('read_data.php');
 }
 
 mysqli_stmt_bind_param($stmt, "i", $cmid);
@@ -28,7 +28,7 @@ mysqli_stmt_close($stmt);
 
 if (!$row) {
     $_SESSION['flash_error_mhs'] = 'Data mahasiswa tidak ditemukan.';
-    redirect_ke('baca_mahasiswa.php');
+    redirect_ke('read_data.php');
 }
 
 # Nilai awal (prefill form)
@@ -156,7 +156,7 @@ if (!empty($old)) {
 
                 <button type="submit">Kirim Perubahan</button>
                 <button type="reset">Batal</button>
-                <a href="baca_mahasiswa.php" style="background-color: #b4b4b4; color: #272727; 
+                <a href="read_data.php" style="background-color: #b4b4b4; color: #272727; 
                    padding: 10px 20px; border-radius: 6px; text-decoration: none; 
                    display: inline-block; margin-left: 10px;">
                     Kembali
