@@ -3,12 +3,25 @@ session_start();
 require 'koneksi.php';
 require 'fungsi.php';
 
-$sql = "SELECT * FROM tbl_atma ORDER BY cmid DESC";
+# Cek koneksi
+if (!$conn) {
+    die("Koneksi database gagal.");
+}
+
+$sql = "SELECT * FROM tbl_data ORDER BY cmid DESC";
 $q = mysqli_query($conn, $sql);
 if (!$q) {
     die("Query error: " . mysqli_error($conn));
 }
 
+# Debug: cek jumlah data
+$num_rows = mysqli_num_rows($q);
+error_log("Jumlah data di tbl_atma: " . $num_rows);
+
+$flash_sukses = $_SESSION['flash_sukses_mhs'] ?? '';
+$flash_error  = $_SESSION['flash_error_mhs'] ?? '';
+unset($_SESSION['flash_sukses_mhs'], $_SESSION['flash_error_mhs']);
+?>
 $flash_sukses = $_SESSION['flash_sukses_mhs'] ?? '';
 $flash_error  = $_SESSION['flash_error_mhs'] ?? '';
 unset($_SESSION['flash_sukses_mhs'], $_SESSION['flash_error_mhs']);

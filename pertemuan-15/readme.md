@@ -16,4 +16,5 @@ Mempelajari :
     <li> Mengisi kode di dalam agar bekerja mengupdate </li>
     <li> membuat file baru yaitu hapus_data.php </li>
     <li> mengisi kode di hapus_data.php <li>
+    <li> perbaikan <li>
  </ol>

@@ -5,7 +5,7 @@ require_once __DIR__ . '/fungsi.php';
 
 # Cek method form, hanya izinkan POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    $_SESSION['flash_error_mhs'] = 'Akses tidak valid.';
+    $_SESSION['flash_error_edit'] = 'Akses tidak valid.';
     redirect_ke('read_data.php');
 }
 
@@ -16,7 +16,7 @@ $cmid = filter_input(INPUT_POST, 'cmid', FILTER_VALIDATE_INT, [
 
 if (!$cmid) {
     $_SESSION['flash_error_edit'] = 'ID Mahasiswa tidak valid.';
-    redirect_ke('edit_data.php?cmid=' . (int)$_POST['cmid']);
+    redirect_ke('edit_data.php?cmid=' . (int)($_POST['cmid'] ?? 0));
 }
 
 # Ambil dan bersihkan nilai dari form
@@ -97,7 +97,7 @@ $sql = "UPDATE tbl_data SET
 $stmt = mysqli_prepare($conn, $sql);
 
 if (!$stmt) {
-    $_SESSION['flash_error_edit'] = 'Terjadi kesalahan sistem (prepare gagal).';
+    $_SESSION['flash_error_edit'] = 'Terjadi kesalahan sistem (prepare gagal). Error: ' . mysqli_error($conn);
     redirect_ke('edit_data.php?cmid=' . $cmid);
 }
 
@@ -142,7 +142,7 @@ if (mysqli_stmt_execute($stmt)) {
         'nama_adik' => $nama_adik
     ];
     
-    $_SESSION['flash_error_edit'] = 'Data gagal diperbarui. Silakan coba lagi.';
+    $_SESSION['flash_error_edit'] = 'Data gagal diperbarui. Error: ' . mysqli_stmt_error($stmt);
     redirect_ke('edit_data.php?cmid=' . $cmid);
 }
 

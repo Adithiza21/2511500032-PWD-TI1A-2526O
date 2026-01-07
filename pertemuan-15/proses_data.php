@@ -68,7 +68,7 @@ if (empty($nama_ortu)) {
 
 # Cek duplikasi NIM
 if (empty($errors)) {
-    $check_nim = "SELECT cmid FROM tbl_atmaatma WHERE cnim = ?";
+    $check_nim = "SELECT cmid FROM tbl_data WHERE cnim = ?";
     $stmt_check = mysqli_prepare($conn, $check_nim);
     mysqli_stmt_bind_param($stmt_check, "s", $nim);
     mysqli_stmt_execute($stmt_check);
@@ -114,14 +114,14 @@ $_SESSION['biodata'] = [
 ];
 
 # Insert data ke database menggunakan prepared statement
-$sql = "INSERT INTO tbl_atma (cnim, cnama, ctempat_lahir, ctanggal_lahir, 
+$sql = "INSERT INTO tbl_data (cnim, cnama, ctempat_lahir, ctanggal_lahir, 
         chobi, cpasangan, cpekerjaan, cnama_ortu, cnama_kakak, cnama_adik) 
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         
 $stmt = mysqli_prepare($conn, $sql);
 
 if (!$stmt) {
-    $_SESSION['flash_error'] = 'Terjadi kesalahan sistem (prepare gagal).';
+    $_SESSION['flash_error'] = 'Terjadi kesalahan sistem (prepare gagal). Error: ' . mysqli_error($conn);
     redirect_ke('index.php#biodata');
 }
 
@@ -135,7 +135,7 @@ if (mysqli_stmt_execute($stmt)) {
     unset($_SESSION['old_biodata']);
     $_SESSION['flash_sukses'] = 'Data biodata mahasiswa berhasil disimpan!';
 } else {
-    $_SESSION['flash_error'] = 'Data gagal disimpan. Silakan coba lagi.';
+    $_SESSION['flash_error'] = 'Data gagal disimpan. Error: ' . mysqli_stmt_error($stmt);
     $_SESSION['old_biodata'] = [
         'nim' => $nim,
         'nama' => $nama,

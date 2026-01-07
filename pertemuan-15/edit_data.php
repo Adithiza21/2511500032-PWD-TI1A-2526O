@@ -7,14 +7,15 @@ require 'fungsi.php';
 $cmid = filter_input(INPUT_GET, 'cmid', FILTER_VALIDATE_INT, [
     'options' => ['min_range' => 1]
 ]);
-
-if (!$cmid) {
-    $_SESSION['flash_error_mhs'] = 'Akses tidak valid.';
-    redirect_ke('baca_mahasiswa.php');
+# Ambil data lama dari database
+$stmt = mysqli_prepare($conn, "SELECT * FROM tbl_data WHERE cmid = ? LIMIT 1");
+if (!$stmt) {
+    $_SESSION['flash_error_mhs'] = 'Query tidak benar. Error: ' . mysqli_error($conn);
+    redirect_ke('read_data.php');
 }
 
 # Ambil data lama dari database
-$stmt = mysqli_prepare($conn, "SELECT * FROM tbl_atma WHERE cmid = ? LIMIT 1");
+$stmt = mysqli_prepare($conn, "SELECT * FROM tbl_data WHERE cmid = ? LIMIT 1");
 if (!$stmt) {
     $_SESSION['flash_error_mhs'] = 'Query tidak benar.';
     redirect_ke('read_data.php');
